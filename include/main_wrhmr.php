@@ -1,3 +1,8 @@
+<?php
+require "include/components/__title.php";
+require "include/components/__subtitle.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,16 +13,8 @@
 </head>
 
 <body>
-    <header>
-        <?php
-        require "include/header_wrhmr.php";
-        ?>
-    </header>
     <main>
-        <a href="index.php">retour</a>
-        <?php
-        require "include/main_wrhmr.php";
-        ?>
+        <p><?= $welcome_wrhmr ?></p>
     </main>
     <footer>
         <?php
