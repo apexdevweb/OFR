@@ -1,0 +1,71 @@
+@use "_typo";
+@use "_placeholders";
+@use "_mixins";
+
+.idx__header {
+  @include mixins.display_column();
+  height: 50vh;
+  width: 100%;
+  & .idx__header--vid_container {
+    padding: 0;
+    position: relative;
+    height: auto;
+    width: 100%;
+    @include mixins.display_row();
+    & .game__vid {
+      height: auto;
+      width: 50%;
+    }
+  }
+  & .idx__header--title_container {
+    top: 38%;
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    @extend %logo-background;
+    @extend %link-typo;
+    position: absolute;
+  }
+}
+.Alpha__title {
+  @extend %font-alpha;
+}
+.Alpha__sub--title {
+  @extend %font-beta;
+}
+.alpha__section {
+  height: auto;
+  width: 100%;
+  @include mixins.display_row();
+  & .swtor__choice {
+    @extend %section-height;
+    @include mixins.size();
+    background: url("../images/swtor.webp") no-repeat 50% 50%;
+    & .main__swtor--subtitle {
+      @include mixins.display_column();
+      @extend %section-height;
+      text-align: center;
+      & a {
+        @extend %link-typo;
+      }
+    }
+  }
+  & .wrhmr__choice {
+    @include mixins.size();
+    background: url("../images/wrhmr3.webp") no-repeat 50% 50%;
+    & .main__wrhmr--subtitle {
+      @include mixins.display_column();
+      @extend %section-height;
+      text-align: center;
+      & a {
+        @extend %link-typo;
+      }
+    }
+  }
+}
+// .main__swtor{
+
+// }
+// .main__wrhmr{
+
+// }

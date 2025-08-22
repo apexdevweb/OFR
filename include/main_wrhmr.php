@@ -13,8 +13,10 @@ require "include/components/__subtitle.php";
 </head>
 
 <body>
-    <main>
-        <p><?= $welcome_wrhmr ?></p>
+    <main class="main__wrhmr">
+        <div class="main__wrhmr--conatainer">
+            <p><?= $welcome_wrhmr ?></p>
+        </div>
     </main>
     <footer>
         <?php

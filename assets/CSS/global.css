@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap");
+.idx__header .idx__header--title_container, .alpha__section .swtor__choice .main__swtor--subtitle a, .alpha__section .wrhmr__choice .main__wrhmr--subtitle a {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 0px 5px #000;
+}
+
+.alpha__section .swtor__choice, .alpha__section .swtor__choice .main__swtor--subtitle, .alpha__section .wrhmr__choice .main__wrhmr--subtitle {
+  height: 50vh;
+  width: 100%;
+}
+
+.idx__header .idx__header--title_container {
+  background: url("../images/frcolor.png") no-repeat 50% 50%;
+  background-size: 17%;
+  filter: drop-shadow(0px 0px 5px #000);
+}
+
+.Alpha__title {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.Alpha__sub--title {
+  font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.idx__header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 100%;
+}
+.idx__header .idx__header--vid_container {
+  padding: 0;
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.idx__header .idx__header--vid_container .game__vid {
+  height: auto;
+  width: 50%;
+}
+.idx__header .idx__header--title_container {
+  top: 38%;
+  height: auto;
+  width: 100%;
+  overflow: visible;
+  position: absolute;
+}
+
+.alpha__section {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.alpha__section .swtor__choice {
+  height: auto;
+  width: 100%;
+  background: url("../images/swtor.webp") no-repeat 50% 50%;
+}
+.alpha__section .swtor__choice .main__swtor--subtitle {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.alpha__section .wrhmr__choice {
+  height: auto;
+  width: 100%;
+  background: url("../images/wrhmr3.webp") no-repeat 50% 50%;
+}
+.alpha__section .wrhmr__choice .main__wrhmr--subtitle {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,16 @@
+@mixin display_row{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+@mixin display_column{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+@mixin size {
+    height: auto;
+    width: 100%;
+}

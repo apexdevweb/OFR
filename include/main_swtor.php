@@ -13,8 +13,10 @@ require "include/components/__subtitle.php";
 </head>
 
 <body>
-    <main>
-        <p><?= $welcome_swtor ?></p>
+    <main class="main__swtor">
+        <div class="main__swtor--conatainer">
+            <p><?= $welcome_swtor ?></p>
+        </div>
     </main>
     <footer>
         <?php
