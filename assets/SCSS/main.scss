@@ -75,6 +75,7 @@ body {
     @extend %section-height;
     @include mixins.size();
     background: url("../images/swtor.webp") no-repeat 50% 50%;
+    background-size: cover;
     & .main__swtor--subtitle {
       @include mixins.display_column();
       @extend %section-height;
@@ -89,6 +90,7 @@ body {
   & .wrhmr__choice {
     @include mixins.size();
     background: url("../images/wrhmr3.webp") no-repeat 50% 50%;
+    background-size: cover;
     & .main__wrhmr--subtitle {
       @include mixins.display_column();
       @extend %section-height;
