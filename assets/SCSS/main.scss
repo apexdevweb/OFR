@@ -1,7 +1,11 @@
 @use "_typo";
 @use "_placeholders";
 @use "_mixins";
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .idx__header {
   @include mixins.display_column();
   height: 50vh;
@@ -12,27 +16,57 @@
     height: auto;
     width: 100%;
     @include mixins.display_row();
-    & .game__vid {
+    & .idx__header--vid_subctnr-A {
       height: auto;
       width: 50%;
+      overflow: hidden;
+      @include mixins.display_column();
+      & .game__vid {
+        height: auto;
+        width: 100%;
+      }
+      & .black__papper-A {
+        position: absolute;
+        height: 56vh;
+        width: 50%;
+        transform: rotate(180deg)
+      }
+    }
+    & .idx__header--vid_subctnr-B {
+      @include mixins.display_column();
+      height: auto;
+      width: 50%;
+      overflow: hidden;
+      & .game__vid {
+        height: auto;
+        width: 100%;
+      }
+      & .black__papper-B {
+        position: absolute;
+        height: 56vh;
+        width: 50%;
+      }
     }
   }
   & .idx__header--title_container {
-    top: 38%;
+    @include mixins.display_column();
+    top: 0;
     height: auto;
     width: 100%;
-    overflow: visible;
-    @extend %logo-background;
-    @extend %link-typo;
     position: absolute;
+    & .logo__banner {
+      height: 45vh;
+      width: auto;
+      @include mixins.title-entry(1s, 0.2s, translateZ(50px));
+    }
+    & .Alpha__title {
+      @extend %Big-ft-size;
+      @extend %font-alpha;
+      @include mixins.title-entry(1s, 0.2s, translateZ(50px));
+    }
   }
 }
-.Alpha__title {
-  @extend %font-alpha;
-}
-.Alpha__sub--title {
-  @extend %font-beta;
-}
+
 .alpha__section {
   height: auto;
   width: 100%;
@@ -46,7 +80,9 @@
       @extend %section-height;
       text-align: center;
       & a {
+        @extend %font-beta;
         @extend %link-typo;
+        @include mixins.over_title();
       }
     }
   }
@@ -58,7 +94,9 @@
       @extend %section-height;
       text-align: center;
       & a {
+        @extend %font-beta;
         @extend %link-typo;
+        @include mixins.over_title();
       }
     }
   }

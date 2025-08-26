@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap");
-.idx__header .idx__header--title_container, .alpha__section .swtor__choice .main__swtor--subtitle a, .alpha__section .wrhmr__choice .main__wrhmr--subtitle a {
+.alpha__section .swtor__choice .main__swtor--subtitle a, .alpha__section .wrhmr__choice .main__wrhmr--subtitle a {
   font-size: 2.5rem;
   letter-spacing: 2px;
   color: #fff;
@@ -12,24 +12,36 @@
   width: 100%;
 }
 
-.idx__header .idx__header--title_container {
-  background: url("../images/frcolor.png") no-repeat 50% 50%;
-  background-size: 17%;
-  filter: drop-shadow(0px 0px 5px #000);
-}
-
-.Alpha__title {
+.idx__header .idx__header--title_container .Alpha__title {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
   text-align: center;
 }
 
-.Alpha__sub--title {
+.alpha__section .swtor__choice .main__swtor--subtitle a, .alpha__section .wrhmr__choice .main__wrhmr--subtitle a {
   font-family: "Electrolize", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
+}
+
+.idx__header .idx__header--title_container .Alpha__title {
+  color: #fff;
+  font-size: 4.5rem;
+  text-shadow: 0px 0px 5px #000;
+}
+
+@keyframes title-entry-anim {
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .idx__header {
@@ -50,16 +62,64 @@
   align-items: center;
   justify-content: center;
 }
-.idx__header .idx__header--vid_container .game__vid {
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-A {
   height: auto;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-A .game__vid {
+  height: auto;
+  width: 100%;
+}
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-A .black__papper-A {
+  position: absolute;
+  height: 56vh;
+  width: 50%;
+  transform: rotate(180deg);
+}
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-B {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 50%;
+  overflow: hidden;
+}
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-B .game__vid {
+  height: auto;
+  width: 100%;
+}
+.idx__header .idx__header--vid_container .idx__header--vid_subctnr-B .black__papper-B {
+  position: absolute;
+  height: 56vh;
   width: 50%;
 }
 .idx__header .idx__header--title_container {
-  top: 38%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  top: 0;
   height: auto;
   width: 100%;
-  overflow: visible;
   position: absolute;
+}
+.idx__header .idx__header--title_container .logo__banner {
+  height: 45vh;
+  width: auto;
+  opacity: 0;
+  transform: translateZ(50px);
+  animation: title-entry-anim 1s ease-out 0.2s forwards;
+}
+.idx__header .idx__header--title_container .Alpha__title {
+  opacity: 0;
+  transform: translateZ(50px);
+  animation: title-entry-anim 1s ease-out 0.2s forwards;
 }
 
 .alpha__section {
@@ -82,6 +142,11 @@
   justify-content: center;
   text-align: center;
 }
+.alpha__section .swtor__choice .main__swtor--subtitle a:hover {
+  text-decoration: underline;
+  transition: 0.6s ease-in-out;
+  border-width: 100%;
+}
 .alpha__section .wrhmr__choice {
   height: auto;
   width: 100%;
@@ -93,6 +158,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.alpha__section .wrhmr__choice .main__wrhmr--subtitle a:hover {
+  text-decoration: underline;
+  transition: 0.6s ease-in-out;
+  border-width: 100%;
 }
 
 /*# sourceMappingURL=global.css.map */

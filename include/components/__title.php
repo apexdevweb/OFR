@@ -1,3 +1,2 @@
 <?php
-$primary_tilte = "O.F.R-Gaming";
-$secondary_title = "Open dors and close mounth";
+$primary_title = "O.F.R-Gaming";

@@ -14,12 +14,18 @@ require "include/components/__title.php";
 <body>
     <header class="idx__header">
         <div class="idx__header--vid_container">
-            <video class="game__vid" src="assets/videos/swtor.mp4" autoplay loop muted></video>
-            <video class="game__vid" src="assets/videos/wrhmr.mp4" autoplay loop muted></video>
+            <div class="idx__header--vid_subctnr-A">
+                <video class="game__vid" src="assets/videos/swtor.mp4" autoplay loop muted></video>
+                <img class="black__papper-A" src="assets/images/papperfont.png" alt="papperfont">
+            </div>
+            <div class="idx__header--vid_subctnr-B">
+                <video class="game__vid" src="assets/videos/wrhmr.mp4" autoplay loop muted></video>
+                <img class="black__papper-B" src="assets/images/papperfont.png" alt="papperfont">
+            </div>
         </div>
         <div class="idx__header--title_container">
-            <h1 class="Alpha__title"><?= $primary_tilte ?></h1>
-            <h2 class="Alpha__sub--title"><?= $secondary_title ?></h2>
+            <img class="logo__banner" src="assets/images/frcolor.png" alt="">
+            <h1 class="Alpha__title"><?= $primary_title ?></h1>
         </div>
     </header>
     <main>

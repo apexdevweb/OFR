@@ -1,16 +1,40 @@
-@mixin display_row{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+@mixin display_row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
-@mixin display_column{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+@mixin display_column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
 @mixin size {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
+}
+@mixin over_title {
+  &:hover {
+    text-decoration: underline;
+    transition: 0.6s ease-in-out;
+    border-width: 100%;
+  }
+}
+@mixin title-entry(
+  $duration: 0.8s,
+  $delay: 0s,
+  $from: translateY(30px),
+  $easing: ease-out
+) {
+  opacity: 0;
+  transform: $from;
+  animation: title-entry-anim $duration $easing $delay forwards;
+}
+
+@keyframes title-entry-anim {
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
 }
