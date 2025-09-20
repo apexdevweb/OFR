@@ -1,0 +1,107 @@
+@use "_mixins.scss";
+@use "_placeholders.scss";
+@use "_typo.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  & .idx__container--main {
+    @include mixins.column_center();
+    height: auto;
+    width: 100%;
+    & .idx__container--A {
+      @include mixins.column_center();
+      height: auto;
+      width: 100%;
+      background-color: #000;
+      & .idx__logo {
+        height: auto;
+        width: 25vw;
+      }
+      & .idx__title {
+        @extend %font-one;
+        @extend %big-size;
+      }
+    }
+    & .idx__container--B {
+      @include mixins.column_center();
+      height: 25vh;
+      width: 100%;
+      background-color: #000;
+      & .idx__btn {
+        margin: 0;
+        padding: 0;
+        height: 4vh;
+        width: 8vw;
+        background: none;
+        border-radius: 15px;
+        border-color: #fff;
+        border-width: 1px;
+        &:hover {
+            transition: 0.3s ease;
+            border-radius: 0;
+            filter: drop-shadow(0px 0px 2px #fff);
+          }
+        & .idx__btn--enter {
+          @extend %font-one;
+          @extend %medium-size;
+          text-decoration: none;
+          color: #000;
+          letter-spacing: 2px;
+        }
+      }
+      .top {
+        &__angle--A,
+        &__angle--B,
+        &__angle--C {
+          opacity: 0;
+          height: 2vh;
+          width: 5%;
+          border-style: solid;
+          border-color: #fff;
+          border-top-width: 2px;
+          border-right-width: 2px;
+          border-bottom-width: 0;
+          border-left-width: 0;
+        }
+
+        &__angle--A {
+          margin-left: 10vw;
+        }
+        &__angle--B {
+          margin-left: 8vw;
+        }
+        &__angle--C {
+          margin-left: 6vw;
+        }
+      }
+
+      .bottom {
+        &__angle--A,
+        &__angle--B,
+        &__angle--C {
+          opacity: 0;
+          height: 2vh;
+          width: 5%;
+          border-style: solid;
+          border-color: #fff;
+          border-bottom-width: 2px;
+          border-left-width: 2px;
+          border-top-width: 0;
+          border-right-width: 0;
+        }
+
+        &__angle--A {
+          margin-right: 10vw;
+        }
+        &__angle--B {
+          margin-right: 8vw;
+        }
+        &__angle--C {
+          margin-right: 6vw;
+        }
+      }
+    }
+  }
+}
