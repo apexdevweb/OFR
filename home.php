@@ -21,6 +21,7 @@
     <footer>
 
     </footer>
+    <script src="assets/JS/animBeta.js" defer></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 @use "_mixins.scss";
 @use "_placeholders.scss";
 @use "_typo.scss";
+@use "_barrets.scss";
 
 body {
   margin: 0;
@@ -14,14 +15,20 @@ body {
       @include mixins.column_center();
       height: auto;
       width: 100%;
-      background-color: #000;
+      background-color: #fff;
       & .idx__logo {
         height: auto;
         width: 25vw;
+        animation: slide-in 1.5s ease-out forwards;
       }
       & .idx__title {
         @extend %font-one;
         @extend %big-size;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0px 0px 5px #000;
+        animation: slide-in 1.5s ease-out forwards;
       }
     }
     & .idx__container--B {
@@ -39,67 +46,93 @@ body {
         border-color: #fff;
         border-width: 1px;
         &:hover {
-            transition: 0.3s ease;
-            border-radius: 0;
-            filter: drop-shadow(0px 0px 2px #fff);
-          }
+          transition: 0.3s ease;
+          border-radius: 0;
+          filter: drop-shadow(0px 0px 2px #fff);
+        }
         & .idx__btn--enter {
           @extend %font-one;
           @extend %medium-size;
           text-decoration: none;
-          color: #000;
+          color: #fff;
           letter-spacing: 2px;
         }
       }
-      .top {
-        &__angle--A,
-        &__angle--B,
-        &__angle--C {
-          opacity: 0;
-          height: 2vh;
-          width: 5%;
-          border-style: solid;
-          border-color: #fff;
-          border-top-width: 2px;
-          border-right-width: 2px;
-          border-bottom-width: 0;
-          border-left-width: 0;
-        }
-
-        &__angle--A {
-          margin-left: 10vw;
-        }
-        &__angle--B {
-          margin-left: 8vw;
-        }
-        &__angle--C {
-          margin-left: 6vw;
+    }
+  }
+  & .navbar {
+    @include mixins.column_center();
+    height: auto;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    & .nav__banner {
+      @include mixins.row_center();
+      height: auto;
+      width: 100%;
+      & .nav__logo {
+        height: auto;
+        width: 18vw;
+      }
+      & .nav__title {
+        @extend %font-one;
+        @extend %big-size;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0px 0px 5px #000;
+      }
+    }
+    & .login__form {
+      @include mixins.column_center();
+      padding: 5px;
+      height: 15vh;
+      max-width: 25%;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      & input[type="text"],
+      input[type="password"] {
+        @extend %font-one;
+        height: 3vh;
+        width: auto;
+        border: 1px solid #fff;
+        background: none;
+        color: #fff;
+        border-radius: 5px;
+      }
+      & input[type="submit"] {
+        @extend %font-one;
+        height: 3vh;
+        width: auto;
+        border: 1px solid #fff;
+        background: none;
+        color: #fff;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0px 0px 8px rgb(252, 48, 48);
         }
       }
-
-      .bottom {
-        &__angle--A,
-        &__angle--B,
-        &__angle--C {
-          opacity: 0;
-          height: 2vh;
-          width: 5%;
-          border-style: solid;
-          border-color: #fff;
-          border-bottom-width: 2px;
-          border-left-width: 2px;
-          border-top-width: 0;
-          border-right-width: 0;
-        }
-
-        &__angle--A {
-          margin-right: 10vw;
-        }
-        &__angle--B {
-          margin-right: 8vw;
-        }
-        &__angle--C {
-          margin-right: 6vw;
+    }
+    & .nav__item--container {
+      @include mixins.row_center();
+      margin: 0;
+      padding: 0;
+      min-height: 20vh;
+      width: 100%;
+      & .nav__item {
+        @include mixins.column_center();
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: 80%;
+        list-style-type: none;
+        & a {
+          @extend %font-one;
+          color: #fff;
+          letter-spacing: 1px;
+          text-decoration: none;
         }
       }
     }

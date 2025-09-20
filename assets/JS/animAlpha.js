@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.05, // plus serré
     duration: 0.15, // plus rapide
     ease: "power2.out",
-  }).to(
+  });
+  tl.to(
     bottomBars,
     {
       opacity: 1,
