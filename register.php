@@ -21,8 +21,6 @@
     <footer>
 
     </footer>
-    <script src="assets/JS/animBeta.js" defer></script>
-    <script src="assets/JS/revealLogin.js" defer></script>
 </body>
 
 </html>
