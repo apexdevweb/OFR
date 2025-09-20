@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: space-around;
 }
+@mixin row_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
 //Anime MIxin
 @mixin make-keyframe($slide-in) {
     @keyframes #{$slide-in} {
