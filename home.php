@@ -12,6 +12,7 @@
         <?php
         require "include/header.php";
         ?>
+        <p class="header__register--link"><?= $register_ofr ?></p>
     </header>
     <main>
         <?php
@@ -19,7 +20,9 @@
         ?>
     </main>
     <footer>
-
+        <?php
+        require "include/footer.php";
+        ?>
     </footer>
     <script src="assets/JS/animBeta.js" defer></script>
     <script src="assets/JS/revealLogin.js" defer></script>

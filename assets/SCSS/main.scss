@@ -22,7 +22,7 @@ body {
         animation: slide-in 1.5s ease-out forwards;
       }
       & .idx__title {
-        @extend %font-one;
+        @extend %font-two;
         @extend %big-size;
         letter-spacing: 3px;
         font-weight: 700;
@@ -76,7 +76,7 @@ body {
         width: 18vw;
       }
       & .nav__title {
-        @extend %font-one;
+        @extend %font-two;
         @extend %big-size;
         letter-spacing: 3px;
         font-weight: 700;
@@ -149,11 +149,11 @@ body {
             box-shadow: 0px 0px 8px rgb(252, 48, 48);
           }
         }
-        & .login__pin--container{
+        & .login__pin--container {
           @include mixins.row_wrap();
           min-height: 10vh;
           width: 7vw;
-          & .log__pin--btn{
+          & .log__pin--btn {
             height: 2vh;
             width: 2vw;
             background: none;
@@ -196,6 +196,43 @@ body {
     & .main__txt--intro {
       @extend %font-one;
       @extend %small-size;
+    }
+  }
+  & .register__ctnr {
+    @include mixins.column_center();
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000;
+    & .sign_up_form {
+      @include mixins.column_center();
+      @extend %font-one;
+      @extend %small-size;
+      min-height: 25vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      & input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        @extend %font-one;
+        height: 3vh;
+        width: auto;
+        border: none;
+        background: none;
+        color: #fff;
+        border-radius: 5px;
+        &:focus {
+          border-bottom: 1px solid #000;
+        }
+      }
+      & hr {
+        height: 1px;
+        width: 5vw;
+        border: none;
+        background-color: #000;
+      }
     }
   }
 }

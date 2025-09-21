@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap");
 @keyframes slide-in {
   from {
     opacity: 0;
@@ -9,9 +9,17 @@
     transform: translateY(0);
   }
 }
-body .idx__container--main .idx__container--A .idx__title, body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .navbar .nav__banner .nav__title, body .navbar .log__sub--ctnr .log__title, body .navbar .log__sub--ctnr .login__form input[type=text],
-body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro {
+body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .navbar .log__sub--ctnr .log__title, body .navbar .log__sub--ctnr .login__form input[type=text],
+body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
+body .register__ctnr .sign_up_form input[type=password],
+body .register__ctnr .sign_up_form input[type=email] {
   font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body .idx__container--main .idx__container--A .idx__title, body .navbar .nav__banner .nav__title {
+  font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
 }
@@ -24,7 +32,7 @@ body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .
   font-size: 1.6rem;
 }
 
-body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro {
+body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -316,6 +324,48 @@ body .main__container {
   justify-content: space-evenly;
   height: auto;
   width: 100%;
+}
+body .register__ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #000;
+}
+body .register__ctnr .sign_up_form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 25vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body .register__ctnr .sign_up_form input[type=text],
+body .register__ctnr .sign_up_form input[type=password],
+body .register__ctnr .sign_up_form input[type=email] {
+  height: 3vh;
+  width: auto;
+  border: none;
+  background: none;
+  color: #fff;
+  border-radius: 5px;
+}
+body .register__ctnr .sign_up_form input[type=text]:focus,
+body .register__ctnr .sign_up_form input[type=password]:focus,
+body .register__ctnr .sign_up_form input[type=email]:focus {
+  border-bottom: 1px solid #000;
+}
+body .register__ctnr .sign_up_form hr {
+  height: 1px;
+  width: 5vw;
+  border: none;
+  background-color: #000;
 }
 
 /*# sourceMappingURL=main.css.map */
