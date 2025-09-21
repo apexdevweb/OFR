@@ -12,7 +12,12 @@
         <?php
         require "include/header.php";
         ?>
-        <p class="header__register--link"><?= $register_ofr ?></p>
+        <br>
+        <div class="top_sign_angle--A top_sign_bar"></div>
+        <div class="top_sign_angle--B top_sign_bar"></div>
+        <p class="header__register--link" id="sign_btn"><?= $register_ofr ?></p>
+        <div class="bottom_sign_angle--B bottom_sign_bar"></div>
+        <div class="bottom_sign_angle--A bottom_sign_bar"></div>
     </header>
     <main>
         <?php
@@ -24,6 +29,7 @@
         require "include/footer.php";
         ?>
     </footer>
+    <script src="assets/JS/animCeta.js" defer></script>
     <script src="assets/JS/animBeta.js" defer></script>
     <script src="assets/JS/revealLogin.js" defer></script>
 </body>

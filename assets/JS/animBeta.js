@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btns = document.querySelectorAll(".nav__item", ".log__title");
+  const btns = document.querySelectorAll(".nav__item");
 
   btns.forEach((btn) => {
     const topBars = btn.querySelectorAll(".top_bar");

@@ -7,15 +7,37 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  header {
+    height: auto;
+    width: 100%;
+    & .header__register--link {
+      height: auto;
+      max-width: 15%;
+      margin: auto;
+      text-align: center;
+      & a {
+        @extend %font-one;
+        @extend %medium-size;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: #000;
+        &:hover {
+          transition: 0.2s ease;
+          letter-spacing: 5px;
+        }
+      }
+    }
+  }
   & .idx__container--main {
     @include mixins.column_center();
     height: auto;
     width: 100%;
     & .idx__container--A {
+      background: url("../images/blackcadre.png") no-repeat 50% 50%;
+      background-size: 100%;
       @include mixins.column_center();
-      height: auto;
+      height: 70vh;
       width: 100%;
-      background-color: #fff;
       & .idx__logo {
         height: auto;
         width: 25vw;
@@ -33,7 +55,7 @@ body {
     }
     & .idx__container--B {
       @include mixins.column_center();
-      height: 25vh;
+      height: 30vh;
       width: 100%;
       background-color: #000;
       & .idx__btn {
@@ -199,25 +221,25 @@ body {
     }
   }
   & .register__ctnr {
+    margin: auto;
     @include mixins.column_center();
-    height: auto;
-    width: 100%;
+    min-height: 25vh;
+    width: 70%;
     padding: 0;
-    margin: 0;
     border: 1px solid #000;
     & .sign_up_form {
       @include mixins.column_center();
       @extend %font-one;
       @extend %small-size;
       min-height: 25vh;
-      width: 100%;
+      width: 70%;
       padding: 0;
       margin: 0;
       & input[type="text"],
       input[type="password"],
       input[type="email"] {
         @extend %font-one;
-        height: 3vh;
+        height: 4vh;
         width: auto;
         border: none;
         background: none;
@@ -228,11 +250,26 @@ body {
         }
       }
       & hr {
-        height: 1px;
-        width: 5vw;
+        height: 5px;
+        width: 25vw;
         border: none;
         background-color: #000;
       }
+    }
+  }
+  footer {
+   min-height: 15vh;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    @include mixins.row_center_fs();
+    background-color: #000;
+    & .footer__container {
+      @include mixins.column_center();
+      height: auto;
+      width: 10vw;
+      @extend %font-one;
+      color: #fff;
     }
   }
 }

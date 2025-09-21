@@ -60,6 +60,7 @@
         <div class="gender_ctnr">
             <label for="usr_gender">H</label>
             <input type="radio" name="usr_gender" value="H">
+            <label for="usr_gender">F</label>
             <input type="radio" name="usr_gender" value="F">
         </div>
         <input type="submit" name="usr_sign" value="Signup">
