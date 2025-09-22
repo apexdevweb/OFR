@@ -26,6 +26,7 @@ require "backend/script/signupScript.php";
         require "include/footer.php";
         ?>
     </footer>
+    <script src="assets/JS/timerPin.js" defer></script>
     <script src="assets/JS/animBeta.js" defer></script>
     <script src="assets/JS/revealLogin.js" defer></script>
 </body>

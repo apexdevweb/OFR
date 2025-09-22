@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap");
+@keyframes slide-B {
+  0% {
+    filter: drop-shadow(0px 0px 5px red);
+  }
+  25% {
+    filter: drop-shadow(0px 0px 5px #fff);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 5px red);
+  }
+  75% {
+    filter: drop-shadow(0px 0px 5px #fff);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 5px red);
+  }
+}
 @keyframes slide-in {
   from {
     opacity: 0;
@@ -12,7 +29,7 @@
 body header .header__register--link a, body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .navbar .log__sub--ctnr .log__title, body .navbar .log__sub--ctnr .login__form input[type=text],
 body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
 body .register__ctnr .sign_up_form input[type=password],
-body .register__ctnr .sign_up_form input[type=email], body footer .footer__container {
+body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body footer .footer__container {
   font-family: "Electrolize", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -32,7 +49,7 @@ body header .header__register--link a, body .idx__container--main .idx__containe
   font-size: 1.6rem;
 }
 
-body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form {
+body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit] {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -184,8 +201,19 @@ body .idx__container--main {
   justify-content: space-evenly;
   height: auto;
   width: 100%;
+  overflow: hidden;
+}
+body .idx__container--main .idx__sub--ctnr {
+  height: 100vh;
+  width: 100%;
+}
+body .idx__container--main .idx__sub--ctnr .idx__vid {
+  height: auto;
+  width: auto;
 }
 body .idx__container--main .idx__container--A {
+  top: 0;
+  position: absolute;
   background: url("../images/blackcadre.png") no-repeat 50% 50%;
   background-size: 100%;
   display: flex;
@@ -198,22 +226,26 @@ body .idx__container--main .idx__container--A {
 body .idx__container--main .idx__container--A .idx__logo {
   height: auto;
   width: 25vw;
-  animation: slide-in 1.5s ease-out forwards;
+  animation: slide-in 1.8s ease-out forwards;
+  mix-blend-mode: overlay;
 }
 body .idx__container--main .idx__container--A .idx__title {
   letter-spacing: 3px;
   font-weight: 700;
   color: #fff;
   text-shadow: 0px 0px 5px #000;
-  animation: slide-in 1.5s ease-out forwards;
+  animation: slide-in 1.8s ease-out forwards;
 }
 body .idx__container--main .idx__container--B {
+  top: 70%;
+  position: absolute;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
   height: 30vh;
   width: 100%;
+  border-top: 1px solid #fff;
   background-color: #000;
 }
 body .idx__container--main .idx__container--B .idx__btn {
@@ -237,12 +269,14 @@ body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter {
   letter-spacing: 2px;
 }
 body .navbar {
+  padding: 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
   height: auto;
   width: 100%;
+  background-size: 100%;
   background-color: #000;
   overflow: hidden;
 }
@@ -381,26 +415,87 @@ body .main__container {
   height: auto;
   width: 100%;
 }
+body .main__container hr {
+  height: 1px;
+  width: 50%;
+  border: none;
+  background-color: #000;
+}
+body .main__container .mySwiper {
+  width: 40vw;
+  height: 35vh;
+  background: url("../images/redcadre2.png") no-repeat 50% 50%;
+  background-size: 80%;
+  filter: drop-shadow(0px 0px 5px #000);
+}
+body .main__container .mySwiper swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .main__container .mySwiper swiper-slide swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 body .register__ctnr {
   margin: auto;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
-  min-height: 25vh;
+  min-height: 35vh;
   width: 70%;
   padding: 0;
-  border: 1px solid #000;
 }
 body .register__ctnr .sign_up_form {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
-  min-height: 25vh;
+  min-height: 35vh;
   width: 70%;
   padding: 0;
   margin: 0;
+}
+body .register__ctnr .sign_up_form .register__sub--ctnr {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+body .register__ctnr .sign_up_form .register__sub--ctnr .country__ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 100%;
+}
+body .register__ctnr .sign_up_form .register__sub--ctnr .role__ctnr {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 100%;
+}
+body .register__ctnr .sign_up_form .register__sub--ctnr .role__ctnr .role__sub--ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: auto;
+}
+body .register__ctnr .sign_up_form .register__sub--ctnr .role__ctnr .role__sub--ctnr .logo__role {
+  height: 35px;
+  width: auto;
 }
 body .register__ctnr .sign_up_form input[type=text],
 body .register__ctnr .sign_up_form input[type=password],
@@ -409,7 +504,7 @@ body .register__ctnr .sign_up_form input[type=email] {
   width: auto;
   border: none;
   background: none;
-  color: #fff;
+  color: #000;
   border-radius: 5px;
 }
 body .register__ctnr .sign_up_form input[type=text]:focus,
@@ -422,6 +517,25 @@ body .register__ctnr .sign_up_form hr {
   width: 25vw;
   border: none;
   background-color: #000;
+}
+body .register__ctnr .sign_up_form input[type=submit] {
+  letter-spacing: 2px;
+  padding: 3px;
+  height: 8vh;
+  width: 14vw;
+  background: url("../images/redcadre2.png") no-repeat 50% 50%;
+  background-size: 47%;
+  border: none;
+  filter: drop-shadow(0px 0px 3px #000);
+}
+body .register__ctnr .sign_up_form input[type=submit]:hover {
+  transition: 0.4s ease;
+  letter-spacing: 4px;
+  background-size: 60%;
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+  border-radius: 15px;
 }
 body footer {
   min-height: 15vh;

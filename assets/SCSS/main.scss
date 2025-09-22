@@ -32,7 +32,18 @@ body {
     @include mixins.column_center();
     height: auto;
     width: 100%;
+    overflow: hidden;
+    & .idx__sub--ctnr {
+      height: 100vh;
+      width: 100%;
+      & .idx__vid {
+        height: auto;
+        width: auto;
+      }
+    }
     & .idx__container--A {
+      top: 0;
+      position: absolute;
       background: url("../images/blackcadre.png") no-repeat 50% 50%;
       background-size: 100%;
       @include mixins.column_center();
@@ -41,7 +52,8 @@ body {
       & .idx__logo {
         height: auto;
         width: 25vw;
-        animation: slide-in 1.5s ease-out forwards;
+        animation: slide-in 1.8s ease-out forwards;
+        mix-blend-mode: overlay;
       }
       & .idx__title {
         @extend %font-two;
@@ -50,14 +62,17 @@ body {
         font-weight: 700;
         color: #fff;
         text-shadow: 0px 0px 5px #000;
-        animation: slide-in 1.5s ease-out forwards;
+        animation: slide-in 1.8s ease-out forwards;
       }
     }
     & .idx__container--B {
+      top: 70%;
+      position: absolute;
       @include mixins.column_center();
       height: 30vh;
       width: 100%;
-      background-color: #000;
+      border-top: 1px solid #fff;
+     background-color: #000;
       & .idx__btn {
         margin: 0;
         padding: 0;
@@ -84,9 +99,11 @@ body {
   }
 
   & .navbar {
+    padding: 0;
     @include mixins.column_center();
     height: auto;
     width: 100%;
+    background-size: 100%;
     background-color: #000;
     overflow: hidden;
     & .nav__banner {
@@ -219,22 +236,71 @@ body {
       @extend %font-one;
       @extend %small-size;
     }
+    & hr {
+      height: 1px;
+      width: 50%;
+      border: none;
+      background-color: #000;
+    }
+   & .mySwiper {
+      width:40vw;
+      height: 35vh;
+      background: url('../images/redcadre2.png') no-repeat 50% 50%;
+      background-size:80%;
+      filter: drop-shadow(0px 0px 5px #000);
+      & swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
   & .register__ctnr {
     margin: auto;
     @include mixins.column_center();
-    min-height: 25vh;
+    min-height: 35vh;
     width: 70%;
     padding: 0;
-    border: 1px solid #000;
     & .sign_up_form {
       @include mixins.column_center();
       @extend %font-one;
       @extend %small-size;
-      min-height: 25vh;
+      min-height: 35vh;
       width: 70%;
       padding: 0;
       margin: 0;
+      & .register__sub--ctnr{
+        height: auto;
+        width: 100%;
+        @include mixins.row_center();
+        & .country__ctnr{
+          @include mixins.column_center();
+          height: auto;
+          width: 100%;
+        }
+        & .role__ctnr{
+          @include mixins.row_wrap();
+          height: auto;
+          width: 100%;
+          & .role__sub--ctnr{
+            @include mixins.column_center();
+            height: auto;
+            width: auto;
+            & .logo__role{
+              height: 35px;
+              width:auto;
+            }
+          }
+        }
+      }
       & input[type="text"],
       input[type="password"],
       input[type="email"] {
@@ -243,7 +309,7 @@ body {
         width: auto;
         border: none;
         background: none;
-        color: #fff;
+        color: #000;
         border-radius: 5px;
         &:focus {
           border-bottom: 1px solid #000;
@@ -255,10 +321,31 @@ body {
         border: none;
         background-color: #000;
       }
+      & input[type="submit"]{
+        letter-spacing: 2px;
+        padding: 3px;
+        height: 8vh;
+        width: 14vw;
+        background: url("../images/redcadre2.png") no-repeat 50% 50%;
+        background-size: 47%;
+        border: none;
+        filter: drop-shadow(0px 0px 3px #000);
+        @extend %font-one;
+        @extend %small-size;
+        &:hover{
+          transition: 0.4s ease;
+          letter-spacing: 4px;
+          background-size: 60%;
+          color: red;
+          text-decoration: underline;
+          cursor: pointer;
+          border-radius: 15px;
+        }
+      }
     }
   }
   footer {
-   min-height: 15vh;
+    min-height: 15vh;
     width: 100%;
     bottom: 0;
     position: relative;

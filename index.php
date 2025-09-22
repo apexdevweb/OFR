@@ -13,6 +13,9 @@ require "backend/components/__btnTxt.php";
 
 <body>
     <div class="idx__container--main">
+        <div class="idx__sub--ctnr">
+            <video src="assets/videos/swtor.mp4" autoplay loop muted loading="lazy" class="idx__vid"></video>
+        </div>
         <div class="idx__container--A">
             <img src="assets/images/logoMiniB.png" alt="Logo-OFR" class="idx__logo">
             <h1 class="idx__title"><?= $secondary_title ?></h1>
