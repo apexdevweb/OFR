@@ -1,3 +1,7 @@
+<?php
+require_once "backend/components/init.php";
+require_once "backend/script/loginScript.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +15,20 @@
     <header>
         <?php
         require "include/header.php";
+        if (isset($_SESSION['user_auth'])) {
+        } else {
         ?>
-        <br>
-        <div class="top_sign_angle--A top_sign_bar"></div>
-        <div class="top_sign_angle--B top_sign_bar"></div>
-        <p class="header__register--link" id="sign_btn"><?= $register_ofr ?></p>
-        <div class="bottom_sign_angle--B bottom_sign_bar"></div>
-        <div class="bottom_sign_angle--A bottom_sign_bar"></div>
+            <br>
+            <div class="top_sign_angle--A top_sign_bar"></div>
+            <div class="top_sign_angle--B top_sign_bar"></div>
+            <p class="header__register--link" id="sign_btn"><?= $register_ofr ?></p>
+            <div class="bottom_sign_angle--B bottom_sign_bar"></div>
+            <div class="bottom_sign_angle--A bottom_sign_bar"></div>
+        <?php
+        }
+
+        ?>
+
     </header>
     <main>
         <?php

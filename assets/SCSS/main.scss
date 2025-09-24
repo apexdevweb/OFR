@@ -34,9 +34,12 @@ body {
     width: 100%;
     overflow: hidden;
     & .idx__sub--ctnr {
+      margin: 0;
+      padding: 0;
       height: 100vh;
       width: 100%;
       & .idx__vid {
+        margin-top: -100px;
         height: auto;
         width: auto;
       }
@@ -58,11 +61,12 @@ body {
       & .idx__title {
         @extend %font-two;
         @extend %big-size;
+        opacity: 0;
         letter-spacing: 3px;
         font-weight: 700;
         color: #fff;
         text-shadow: 0px 0px 5px #000;
-        animation: slide-in 1.8s ease-out forwards;
+        animation: slide-in 1.8s ease-out 1s forwards;
       }
     }
     & .idx__container--B {
@@ -72,7 +76,7 @@ body {
       height: 30vh;
       width: 100%;
       border-top: 1px solid #fff;
-     background-color: #000;
+      background-color: #000;
       & .idx__btn {
         margin: 0;
         padding: 0;
@@ -204,6 +208,61 @@ body {
         }
       }
     }
+    & .user__option--ctnr {
+      animation: slide-in 1.8s ease-out forwards;
+      position: fixed;
+      border-radius: 15px;
+      top: 2%;
+      left: 89%;
+      padding: 0;
+      @include mixins.column_center();
+      min-height: 25vh;
+      min-width: 10vw;
+      background: rgba(0, 0, 0, 0.906) url("../images/redcadre2.png") no-repeat
+        50% 50%;
+      background-size: cover;
+      & .user__name--item {
+        margin-top: 0;
+        @include mixins.row_center();
+        @extend %font-one;
+        @extend %small-size;
+        color: #fff;
+        text-decoration: underline;
+        letter-spacing: 1px;
+        & .user__small--light {
+          margin-left: 5px;
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+          background-color: rgb(41, 207, 16);
+          filter: drop-shadow(0px 0px 5px rgb(41, 207, 16));
+        }
+      }
+      & .option__sub--ctnr {
+        margin-top: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+        text-align: left;
+        & .user__option--item {
+          margin: 0;
+          list-style-type: none;
+          & i {
+            color: #fff;
+          }
+          & a {
+            @extend %font-one;
+            @extend %small-size;
+            letter-spacing: 1px;
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
 
     & .nav__item--container {
       @include mixins.row_center();
@@ -242,11 +301,11 @@ body {
       border: none;
       background-color: #000;
     }
-   & .mySwiper {
-      width:40vw;
+    & .mySwiper {
+      width: 40vw;
       height: 35vh;
-      background: url('../images/redcadre2.png') no-repeat 50% 50%;
-      background-size:80%;
+      background: url("../images/redcadre2.png") no-repeat 50% 50%;
+      background-size: 80%;
       filter: drop-shadow(0px 0px 5px #000);
       & swiper-slide {
         text-align: center;
@@ -269,6 +328,49 @@ body {
     min-height: 35vh;
     width: 70%;
     padding: 0;
+    & .pin__view--ctnr {
+      @include mixins.column_center();
+      top: 30%;
+      padding: 5px;
+      position: absolute;
+      min-height: 25vh;
+      max-width: 25vw;
+      background-color: rgba(0, 0, 0, 0.837);
+      border: 1px solid #fff;
+      box-shadow: 0px 0px 5px #000;
+      border-radius: 15px;
+      & .timer__view {
+        @extend %font-two;
+        @extend %small-size;
+        color: red;
+      }
+      & .sign__code--pin {
+        @extend %font-one;
+        @extend %small-size;
+        letter-spacing: 1px;
+        color: #fff;
+        text-align: center;
+        width: 15ch;
+      }
+      & .pin__notif {
+        @extend %font-one;
+        color: red;
+        text-align: center;
+      }
+      & .pin__close--btn {
+        height: 3vh;
+        width: 5vw;
+        @extend %font-one;
+        @extend %small-size;
+        color: #000;
+        border: none;
+        background-color: #fff;
+        border-radius: 10px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
     & .sign_up_form {
       @include mixins.column_center();
       @extend %font-one;
@@ -277,26 +379,26 @@ body {
       width: 70%;
       padding: 0;
       margin: 0;
-      & .register__sub--ctnr{
+      & .register__sub--ctnr {
         height: auto;
         width: 100%;
         @include mixins.row_center();
-        & .country__ctnr{
+        & .country__ctnr {
           @include mixins.column_center();
           height: auto;
           width: 100%;
         }
-        & .role__ctnr{
+        & .role__ctnr {
           @include mixins.row_wrap();
           height: auto;
           width: 100%;
-          & .role__sub--ctnr{
+          & .role__sub--ctnr {
             @include mixins.column_center();
             height: auto;
             width: auto;
-            & .logo__role{
+            & .logo__role {
               height: 35px;
-              width:auto;
+              width: auto;
             }
           }
         }
@@ -321,7 +423,7 @@ body {
         border: none;
         background-color: #000;
       }
-      & input[type="submit"]{
+      & input[type="submit"] {
         letter-spacing: 2px;
         padding: 3px;
         height: 8vh;
@@ -332,7 +434,7 @@ body {
         filter: drop-shadow(0px 0px 3px #000);
         @extend %font-one;
         @extend %small-size;
-        &:hover{
+        &:hover {
           transition: 0.4s ease;
           letter-spacing: 4px;
           background-size: 60%;
@@ -341,6 +443,58 @@ body {
           cursor: pointer;
           border-radius: 15px;
         }
+      }
+    }
+  }
+  & .user__setting--ctnr {
+    @include mixins.row_center();
+    min-height: 50vh;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    & hr {
+      height: 35vh;
+      width: 2px;
+      background-color: #000;
+      border: none;
+    }
+    & .setting__sub--ctnr {
+      @include mixins.column_center();
+      height: 45vh;
+      max-width: 50%;
+      background-color: #000;
+      border: 1px solid #fff;
+      overflow: hidden;
+      border-radius: 15px;
+      padding: 5px;
+      & .user__setting--title {
+        @extend %font-one;
+        @extend %small-size;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+      & .actual__user--data {
+        @include mixins.column_center();
+        height: auto;
+        width: 100%;
+       
+        & .user__title--ctnr {
+          height: auto;
+          width: 100%;
+          & h4,
+          h5 {
+            @extend %font-one;
+            @extend %small-size;
+            color: #fff;
+          }
+        }
+      }
+      & form {
+        @include mixins.column_center();
+        height: 45vh;
+        width: 100%;
       }
     }
   }

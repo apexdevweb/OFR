@@ -1,4 +1,5 @@
 <?php
+require_once "backend/components/init.php";
 require "backend/components/__title.php";
 require "backend/components/__link.php";
 ?>
@@ -7,9 +8,15 @@ require "backend/components/__link.php";
         <img src="assets/images/logoMiniB.png" alt="Logo-OFR" class="nav__logo">
         <h2 class="nav__title"><?= $secondary_title ?></h2>
         <div class="log__sub--ctnr">
-            <h3 class="log__title">Login<i class="fa-solid fa-caret-right" id="logarrow"></i></h3>
             <?php
-            require "module/login_mdl.php";
+            if (isset($_SESSION['user_auth']) && isset($_SESSION['user_data']['user_name'])) {
+                require "module/user_pannel.php";
+            } else {
+            ?>
+                <h3 class="log__title">Login<i class="fa-solid fa-caret-right" id="logarrow"></i></h3>
+            <?php
+                require "module/login_mdl.php";
+            }
             ?>
         </div>
     </div>

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ) {
             $usr_name = htmlspecialchars(strip_tags($_POST['usr_name']));
             $usr_mail = htmlspecialchars(filter_var($_POST['usr_mail']), FILTER_VALIDATE_EMAIL);
-            $usr_password = htmlspecialchars(strip_tags($_POST['usr_pass']));
+            $usr_password = htmlspecialchars($_POST['usr_pass']);
             $usr_crf_pass = htmlspecialchars(strip_tags($_POST['usr_crf_pass']));
             $usr_gender = htmlspecialchars(strip_tags($_POST['usr_gender']));
             $usr_location = htmlspecialchars(strip_tags($_POST['usr_country']));
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "Veuillez choisir une localisation valide";
             } else if ($usr_location != "...") {
                 try {
-                    $usr_verif = $bdd->prepare("SELECT user_mail FROM users WHERE use_mail = ?");
+                    $usr_verif = $bdd->prepare("SELECT user_mail FROM users WHERE user_mail = ?");
                     $usr_verif->execute([$usr_mail]);
                 } catch (PDOException $e) {
                     echo "Erreur de verification de l'utilisateur" . $e->getMessage();
@@ -39,13 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     $pin_select = $bdd->prepare("SELECT secure_key FROM users WHERE id_user = ?");
                                     $pin_select->execute([$last_usr_id]);
                                     $secure_key_view = $pin_select->fetchColumn();
-                                    $key_view_msg = "Un code pin de sécurité a été attribué a votre compte:" . $secure_key_view;
+                                    $key_view_msg = "Un code pin de sécurité a été attribué à votre compte:" . " " . $secure_key_view;
+                                    if (isset($_POST['close_btn'])) {
+                                        header("Location: home.php");
+                                        exit;
+                                    }
                                 } catch (PDOException $e) {
                                     echo "Erreur de selection du code pin" . $e->getMessage();
                                 }
                             }
-                            header("Location: home.php");
-                            exit;
                         } catch (PDOException $e) {
                             echo "Erreur d'insertion de l'utilisateur" . $e->getMessage();
                         }

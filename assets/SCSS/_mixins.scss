@@ -28,7 +28,7 @@
     @keyframes #{$slide-in} {
       from {
         opacity: 0;
-        transform: translateZ(30px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -36,24 +36,4 @@
       }
     }
   }
-@mixin make-keyframeB($slide-B) {
-    @keyframes #{$slide-B} {
-      0% {
-        filter: drop-shadow(0px 0px 5px red);
-      }
-      25%{
-        filter: drop-shadow(0px 0px 5px #fff);
-      }
-      50%{
-        filter: drop-shadow(0px 0px 5px red); 
-      }
-      75%{
-        filter: drop-shadow(0px 0px 5px #fff);
-      }
-      100% {
-        filter: drop-shadow(0px 0px 5px red); 
-      }
-    }
-  }
-  @include make-keyframeB(slide-B);
   @include make-keyframe(slide-in);

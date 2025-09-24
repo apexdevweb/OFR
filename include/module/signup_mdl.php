@@ -1,15 +1,21 @@
 <div class="register__ctnr">
     <?php
     if (isset($error_msg)) {
-
     ?>
         <h3 class="sign__error--msg"><?= $error_msg ?></h3>
     <?php
     }
     if (isset($key_view_msg)) {
     ?>
-        <p class="timer__view"></p>
-        <h3 class="sign__code--pin"><?= $key_view_msg ?></h3>
+        <div class="pin__view--ctnr" id="secureCtnr">
+            <p class="timer__view"></p>
+            <h3 class="sign__code--pin"><?= $key_view_msg ?></h3>
+            <small class="pin__notif">Notez le pour ne pas l'oublier</small>
+            <br>
+            <form method="post">
+                <input class="pin__close--btn" type="submit" name="close_btn" value="Fermer">
+            </form>
+        </div>
     <?php
     }
     ?>

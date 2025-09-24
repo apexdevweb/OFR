@@ -1,25 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap");
-@keyframes slide-B {
-  0% {
-    filter: drop-shadow(0px 0px 5px red);
-  }
-  25% {
-    filter: drop-shadow(0px 0px 5px #fff);
-  }
-  50% {
-    filter: drop-shadow(0px 0px 5px red);
-  }
-  75% {
-    filter: drop-shadow(0px 0px 5px #fff);
-  }
-  100% {
-    filter: drop-shadow(0px 0px 5px red);
-  }
-}
 @keyframes slide-in {
   from {
     opacity: 0;
-    transform: translateZ(30px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -27,15 +10,16 @@
   }
 }
 body header .header__register--link a, body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .navbar .log__sub--ctnr .log__title, body .navbar .log__sub--ctnr .login__form input[type=text],
-body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
+body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__notif, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
 body .register__ctnr .sign_up_form input[type=password],
-body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body footer .footer__container {
+body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body footer .footer__container {
   font-family: "Electrolize", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-body .idx__container--main .idx__container--A .idx__title, body .navbar .nav__banner .nav__title {
+body .idx__container--main .idx__container--A .idx__title, body .navbar .nav__banner .nav__title, body .register__ctnr .pin__view--ctnr .timer__view {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
@@ -49,7 +33,8 @@ body header .header__register--link a, body .idx__container--main .idx__containe
   font-size: 1.6rem;
 }
 
-body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit] {
+body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .timer__view, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5 {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -204,10 +189,13 @@ body .idx__container--main {
   overflow: hidden;
 }
 body .idx__container--main .idx__sub--ctnr {
+  margin: 0;
+  padding: 0;
   height: 100vh;
   width: 100%;
 }
 body .idx__container--main .idx__sub--ctnr .idx__vid {
+  margin-top: -100px;
   height: auto;
   width: auto;
 }
@@ -230,11 +218,12 @@ body .idx__container--main .idx__container--A .idx__logo {
   mix-blend-mode: overlay;
 }
 body .idx__container--main .idx__container--A .idx__title {
+  opacity: 0;
   letter-spacing: 3px;
   font-weight: 700;
   color: #fff;
   text-shadow: 0px 0px 5px #000;
-  animation: slide-in 1.8s ease-out forwards;
+  animation: slide-in 1.8s ease-out 1s forwards;
 }
 body .idx__container--main .idx__container--B {
   top: 70%;
@@ -381,6 +370,62 @@ body .navbar .log__sub--ctnr .login__form .login__pin--container .log__pin--btn 
   background-color: #000;
   border-radius: 5px;
 }
+body .navbar .user__option--ctnr {
+  animation: slide-in 1.8s ease-out forwards;
+  position: fixed;
+  border-radius: 15px;
+  top: 2%;
+  left: 89%;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 25vh;
+  min-width: 10vw;
+  background: rgba(0, 0, 0, 0.906) url("../images/redcadre2.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+body .navbar .user__option--ctnr .user__name--item {
+  margin-top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+body .navbar .user__option--ctnr .user__name--item .user__small--light {
+  margin-left: 5px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: rgb(41, 207, 16);
+  filter: drop-shadow(0px 0px 5px rgb(41, 207, 16));
+}
+body .navbar .user__option--ctnr .option__sub--ctnr {
+  margin-top: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+  text-align: left;
+}
+body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item {
+  margin: 0;
+  list-style-type: none;
+}
+body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item i {
+  color: #fff;
+}
+body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a {
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+}
+body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a:hover {
+  text-decoration: underline;
+}
 body .navbar .nav__item--container {
   display: flex;
   flex-flow: row nowrap;
@@ -450,6 +495,45 @@ body .register__ctnr {
   min-height: 35vh;
   width: 70%;
   padding: 0;
+}
+body .register__ctnr .pin__view--ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 30%;
+  padding: 5px;
+  position: absolute;
+  min-height: 25vh;
+  max-width: 25vw;
+  background-color: rgba(0, 0, 0, 0.837);
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px #000;
+  border-radius: 15px;
+}
+body .register__ctnr .pin__view--ctnr .timer__view {
+  color: red;
+}
+body .register__ctnr .pin__view--ctnr .sign__code--pin {
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  width: 15ch;
+}
+body .register__ctnr .pin__view--ctnr .pin__notif {
+  color: red;
+  text-align: center;
+}
+body .register__ctnr .pin__view--ctnr .pin__close--btn {
+  height: 3vh;
+  width: 5vw;
+  color: #000;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+}
+body .register__ctnr .pin__view--ctnr .pin__close--btn:hover {
+  cursor: pointer;
 }
 body .register__ctnr .sign_up_form {
   display: flex;
@@ -536,6 +620,64 @@ body .register__ctnr .sign_up_form input[type=submit]:hover {
   text-decoration: underline;
   cursor: pointer;
   border-radius: 15px;
+}
+body .user__setting--ctnr {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 50vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body .user__setting--ctnr hr {
+  height: 35vh;
+  width: 2px;
+  background-color: #000;
+  border: none;
+}
+body .user__setting--ctnr .setting__sub--ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 45vh;
+  max-width: 50%;
+  background-color: #000;
+  border: 1px solid #fff;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 5px;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--title {
+  color: #fff;
+  letter-spacing: 1px;
+}
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 100%;
+}
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr {
+  height: auto;
+  width: 100%;
+}
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5 {
+  color: #fff;
+}
+body .user__setting--ctnr .setting__sub--ctnr form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 45vh;
+  width: 100%;
 }
 body footer {
   min-height: 15vh;
