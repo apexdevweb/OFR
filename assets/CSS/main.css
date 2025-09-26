@@ -13,7 +13,7 @@ body header .header__register--link a, body .idx__container--main .idx__containe
 body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__notif, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
 body .register__ctnr .sign_up_form input[type=password],
 body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
-body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body footer .footer__container {
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label, body footer .footer__container {
   font-family: "Electrolize", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -34,7 +34,7 @@ body header .header__register--link a, body .idx__container--main .idx__containe
 }
 
 body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .timer__view, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
-body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5 {
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -202,8 +202,7 @@ body .idx__container--main .idx__sub--ctnr .idx__vid {
 body .idx__container--main .idx__container--A {
   top: 0;
   position: absolute;
-  background: url("../images/blackcadre.png") no-repeat 50% 50%;
-  background-size: 100%;
+  background-size: 35%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -211,11 +210,36 @@ body .idx__container--main .idx__container--A {
   height: 70vh;
   width: 100%;
 }
-body .idx__container--main .idx__container--A .idx__logo {
+body .idx__container--main .idx__container--A .sub__container--A {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+body .idx__container--main .idx__container--A .sub__container--A .papper1 {
+  margin: 0;
+  height: auto;
+  width: 35vw;
+  transform: rotate(90deg);
+  filter: drop-shadow(0px 0px 5px #000);
+}
+body .idx__container--main .idx__container--A .sub__container--A .idx__logo {
   height: auto;
   width: 25vw;
   animation: slide-in 1.8s ease-out forwards;
   mix-blend-mode: overlay;
+}
+body .idx__container--main .idx__container--A .sub__container--A .papper2 {
+  margin: 0;
+  height: auto;
+  width: 35vw;
+  filter: drop-shadow(0px 0px 5px #000);
 }
 body .idx__container--main .idx__container--A .idx__title {
   opacity: 0;
@@ -627,16 +651,17 @@ body .user__setting--ctnr {
   align-items: center;
   justify-content: space-around;
   min-height: 50vh;
-  max-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-body .user__setting--ctnr hr {
+body .user__setting--ctnr .setting_separate {
   height: 35vh;
   width: 2px;
   background-color: #000;
   border: none;
+  margin: 15px;
 }
 body .user__setting--ctnr .setting__sub--ctnr {
   display: flex;
@@ -644,7 +669,7 @@ body .user__setting--ctnr .setting__sub--ctnr {
   align-items: center;
   justify-content: space-evenly;
   height: 45vh;
-  max-width: 50%;
+  width: 100%;
   background-color: #000;
   border: 1px solid #fff;
   overflow: hidden;
@@ -654,6 +679,17 @@ body .user__setting--ctnr .setting__sub--ctnr {
 body .user__setting--ctnr .setting__sub--ctnr .user__setting--title {
   color: #fff;
   letter-spacing: 1px;
+  text-decoration: underline;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__avatar {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 15vh;
+  max-width: 80%;
+  border-radius: 10px;
+  background-color: #fff;
 }
 body .user__setting--ctnr .setting__sub--ctnr .actual__user--data {
   display: flex;
@@ -666,9 +702,25 @@ body .user__setting--ctnr .setting__sub--ctnr .actual__user--data {
 body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr {
   height: auto;
   width: 100%;
+  text-align: center;
 }
 body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
 body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5 {
+  color: #fff;
+}
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+  width: 100%;
+}
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item {
+  height: auto;
+  width: 100%;
+  text-align: left;
+  list-style-type: none;
   color: #fff;
 }
 body .user__setting--ctnr .setting__sub--ctnr form {
@@ -678,6 +730,36 @@ body .user__setting--ctnr .setting__sub--ctnr form {
   justify-content: space-evenly;
   height: 45vh;
   width: 100%;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10vh;
+  width: 100%;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #000;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label img {
+  height: 25px;
+  width: auto;
 }
 body footer {
   min-height: 15vh;

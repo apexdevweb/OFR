@@ -5,6 +5,12 @@
     align-items: center;
     justify-content: space-evenly;
 }
+@mixin row_center_center {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
 @mixin row_center {
     display: flex;
     flex-flow: row nowrap;

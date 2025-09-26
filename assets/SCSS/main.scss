@@ -47,17 +47,41 @@ body {
     & .idx__container--A {
       top: 0;
       position: absolute;
-      background: url("../images/blackcadre.png") no-repeat 50% 50%;
-      background-size: 100%;
+      background-size: 35%;
       @include mixins.column_center();
       height: 70vh;
       width: 100%;
-      & .idx__logo {
+      // background: url("../images/introPapper.png") no-repeat 99% 50%;
+      // background-size: 35%;
+      & .sub__container--A {
+        margin: 0;
+        padding: 0;
+        top: 0;
+        position: relative;
         height: auto;
-        width: 25vw;
-        animation: slide-in 1.8s ease-out forwards;
-        mix-blend-mode: overlay;
+        width: 100%;
+        @include mixins.row_center();
+        & .papper1 {
+          margin: 0;
+          height: auto;
+          width: 35vw;
+          transform: rotate(90deg);
+          filter: drop-shadow(0px 0px 5px #000);
+        }
+        & .idx__logo {
+          height: auto;
+          width: 25vw;
+          animation: slide-in 1.8s ease-out forwards;
+          mix-blend-mode: overlay;
+        }
+        & .papper2 {
+          margin: 0;
+          height: auto;
+          width: 35vw;
+          filter: drop-shadow(0px 0px 5px #000);
+        }
       }
+
       & .idx__title {
         @extend %font-two;
         @extend %big-size;
@@ -449,21 +473,22 @@ body {
   & .user__setting--ctnr {
     @include mixins.row_center();
     min-height: 50vh;
-    max-width: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
-    & hr {
+
+    & .setting_separate {
       height: 35vh;
       width: 2px;
       background-color: #000;
       border: none;
+      margin: 15px;
     }
     & .setting__sub--ctnr {
       @include mixins.column_center();
       height: 45vh;
-      max-width: 50%;
+      width: 100%;
       background-color: #000;
       border: 1px solid #fff;
       overflow: hidden;
@@ -474,15 +499,23 @@ body {
         @extend %small-size;
         color: #fff;
         letter-spacing: 1px;
+        text-decoration: underline;
+      }
+      & .setting__avatar {
+        @include mixins.column_center();
+        min-height: 15vh;
+        max-width: 80%;
+        border-radius: 10px;
+        background-color: #fff;
       }
       & .actual__user--data {
         @include mixins.column_center();
         height: auto;
         width: 100%;
-       
         & .user__title--ctnr {
           height: auto;
           width: 100%;
+          text-align: center;
           & h4,
           h5 {
             @extend %font-one;
@@ -490,11 +523,49 @@ body {
             color: #fff;
           }
         }
+        & .actual__user--info {
+          @include mixins.column_center();
+          height: 20vh;
+          width: 100%;
+          & .actual__user--item {
+            height: auto;
+            width: 100%;
+            text-align: left;
+            list-style-type: none;
+            @extend %font-one;
+            @extend %small-size;
+            color: #fff;
+          }
+        }
+        ///////AVATAR/////
       }
       & form {
         @include mixins.column_center();
         height: 45vh;
         width: 100%;
+      }
+      & .setting__role--ctnr {
+        @include mixins.row_center();
+        height: auto;
+        width: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+        & .role__sub--ctnr {
+          @include mixins.column_center();
+          height: 10vh;
+          width: 100%;
+          & label {
+            @include mixins.column_center();
+            @extend %font-one;
+            @extend %small-size;
+            color: #000;
+            img {
+              height: 25px;
+              width: auto;
+            }
+          }
+        }
       }
     }
   }
