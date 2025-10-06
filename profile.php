@@ -1,6 +1,6 @@
 <?php
 require_once "backend/components/init.php";
-// require "backend/script/userEditor.php";
+require_once "backend/script/updateProfilScript.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,27 +40,55 @@ require_once "backend/components/init.php";
                 <div class="user__setting--ctnr">
                     <div class="setting__sub--ctnr">
                         <h3 class="user__setting--title">Avatar</h3>
+                        <button popovertarget="the-popover" class="btn_avatar">Choix de l'avatar</button>
+                        <dialog class="user__setting--avatar-ctnr" id="the-popover" popover>
+                            <div class="avatar__choice--ctnr">
+                                <div class="A">
+                                    <img src="assets/avatar/guerrier.png" alt="avatar-choice" class="avt">
+                                </div>
+                                <div class="B">
+                                    <img src="assets/avatar/inqui.png" alt="avatar-choice" class="avt">
+                                </div>
+                                <div class="C">
+                                    <img src="assets/avatar/agent.png" alt="avatar-choice" class="avt">
+                                </div>
+                                <div class="D">
+                                    <img src="assets/avatar/mercenair.png" alt="avatar-choice" class="avt">
+                                </div>
+                            </div>
+                        </dialog>
+                        <h3 class="user__setting--title">Aperçu de votre avatar</h3>
                         <picture class="setting__avatar">
-                            <source media="(min-width: 800px)" srcset="" type="image/jpg">
-                            <source media="(max-width: 799px)" srcset="" type="image/jpg">
-                            <img src="" alt="avatar">
+                            <?php
+                            if (!empty($_SESSION['user_data']['user_avatar'])) {
+                            ?>
+                                <img src="assets/avatar/<?= $_SESSION['user_data']['user_avatar'] ?>" alt="current__avatar">
+                            <?php
+                            } else {
+                            ?>
+                                <img src="assets/images/logoMiniB.png" alt="default_avatar" id="defaultAvt">
+                            <?php
+                            }
+                            ?>
+
                         </picture>
                     </div>
                     <hr class="setting_separate">
                     <div class="setting__sub--ctnr">
                         <form method="post" enctype="multipart/form-data">
+                            <h3 class="setting__title">Change rôle</h3>
                             <div class="setting__role--ctnr">
                                 <div class="role__sub--ctnr">
-                                    <label for="">Tank <img src="../../assets/images/Fichier 3hdpi.png" alt="tank" class="logo__role"> </label>
-                                    <input type="checkbox" name="usr_role" value="Tank">
+                                    <label for="usr_role">Tank <img src="../../assets/images/Fichier 3hdpi.png" alt="tank" class="logo__role"> </label>
+                                    <input type="checkbox" name="usr_role[]" value="Tank">
                                 </div>
                                 <div class="role__sub--ctnr">
-                                    <label for="">Dps <img src="../../assets/images/Fichier 1hdpi.png" alt="tank" class="logo__role"></label>
-                                    <input type="checkbox" name="usr_role" value="Dps">
+                                    <label for="usr_role">Dps <img src="../../assets/images/Fichier 1hdpi.png" alt="tank" class="logo__role"></label>
+                                    <input type="checkbox" name="usr_role[]" value="Dps">
                                 </div>
                                 <div class="role__sub--ctnr">
-                                    <label for="">Heal <img src="../../assets/images/Fichier 2hdpi.png" alt="tank" class="logo__role"></label>
-                                    <input type="checkbox" name="usr_role" value="Heal">
+                                    <label for="usr_role">Heal <img src="../../assets/images/Fichier 2hdpi.png" alt="tank" class="logo__role"></label>
+                                    <input type="checkbox" name="usr_role[]" value="Heal">
                                 </div>
                             </div>
                             <label for="usr_country">Location</label>
@@ -117,7 +145,7 @@ require_once "backend/components/init.php";
                                 <option value="Ukraine">Ukraine</option>
                                 <option value="Vatican">Vatican</option>
                             </select>
-                            <input type="file" name="user_avatar" id="">
+                            <input type="hidden" name="avt" id="update_avt">
                             <input type="submit" name="update_user" value="Update profil">
                         </form>
                     </div>
@@ -132,6 +160,7 @@ require_once "backend/components/init.php";
         require "include/footer.php";
         ?>
     </footer>
+    <script src="assets/JS/selectAvatar.js" defer></script>
     <script src="assets/JS/animCeta.js" defer></script>
     <script src="assets/JS/animBeta.js" defer></script>
     <script src="assets/JS/revealLogin.js" defer></script>

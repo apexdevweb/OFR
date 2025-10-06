@@ -66,7 +66,7 @@ body {
           height: auto;
           width: 35vw;
           transform: rotate(90deg);
-          filter: drop-shadow(0px 0px 5px #000);
+          filter: drop-shadow(0px 0px 5px #fff);
         }
         & .idx__logo {
           height: auto;
@@ -78,7 +78,7 @@ body {
           margin: 0;
           height: auto;
           width: 35vw;
-          filter: drop-shadow(0px 0px 5px #000);
+          filter: drop-shadow(0px 0px 5px #fff);
         }
       }
 
@@ -134,7 +134,17 @@ body {
     background-size: 100%;
     background-color: #000;
     overflow: hidden;
+    & .papper3 {
+      margin: 0;
+      padding: 0;
+      height: 40vh;
+      width: auto;
+      transform: rotate(45deg) translate(-400px, 350px);
+      filter: drop-shadow(0px 0px 5px #fff);
+    }
     & .nav__banner {
+      top: 0;
+      position: absolute;
       @include mixins.row_center();
       height: auto;
       width: 100%;
@@ -477,7 +487,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
     & .setting_separate {
       height: 35vh;
       width: 2px;
@@ -489,11 +498,111 @@ body {
       @include mixins.column_center();
       height: 45vh;
       width: 100%;
-      background-color: #000;
       border: 1px solid #fff;
       overflow: hidden;
       border-radius: 15px;
       padding: 5px;
+      background-color: #000;
+      & .setting__title{
+        @extend %font-one;
+        @extend %small-size;
+        color: #fff;
+        text-decoration: underline;
+      }
+      & label{
+        @extend %font-one;
+        @extend %small-size;
+        color: #fff; 
+        text-decoration: underline;
+      }
+      & .btn_avatar{
+        @extend %font-one;
+        @extend %small-size;
+        border: 1px solid #fff;
+        background: none;
+        color: #fff;
+        &:hover{
+          transition: 0.2s ease-in-out;
+          border-radius: 5px;
+          box-shadow: 0px 0px 5px #fff;
+          cursor: pointer;
+        }
+      }
+
+      & .user__setting--avatar-ctnr {
+        margin: auto;
+        height: 25vh;
+        width: 18vw;
+        border-radius: 15px;
+        padding: 0;
+        border: none;
+        background: rgba(0, 0, 0, 0.792) url("../images/redcadre2.png")
+          no-repeat 50% 50%;
+        background-size: cover;
+        & .avatar__choice--ctnr {
+          margin: auto;
+          height: 17vh;
+          width: 15vw;
+          padding: 10px;
+          display: grid;
+          grid-auto-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 5px 5px;
+          grid-template-areas:
+            "A B"
+            "C D";
+          .A {
+            grid-area: A;
+            text-align: center;
+            & img {
+              height: 8vh;
+              width: auto;
+              &:hover{
+                filter: drop-shadow(0px 0px 5px #fff);
+                cursor: pointer;
+              }
+            }
+          }
+          .B {
+            grid-area: B;
+            text-align: center;
+            & img {
+              height: 10vh;
+              width: auto;
+              &:hover{
+                filter: drop-shadow(0px 0px 5px #fff);
+                cursor: pointer;
+              }
+            }
+          }
+          .C {
+            grid-area: C;
+            text-align: center;
+            & img {
+              height: 10vh;
+              width: auto;
+              &:hover{
+                filter: drop-shadow(0px 0px 5px #fff);
+                cursor: pointer;
+              }
+            }
+          }
+          .D {
+            grid-area: D;
+            text-align: center;
+            & img {
+              height: 10vh;
+              width: auto;
+              &:hover{
+                filter: drop-shadow(0px 0px 5px #fff);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
       & .user__setting--title {
         @extend %font-one;
         @extend %small-size;
@@ -503,10 +612,15 @@ body {
       }
       & .setting__avatar {
         @include mixins.column_center();
-        min-height: 15vh;
-        max-width: 80%;
+        height: 15vh;
+        width: 15vw;
         border-radius: 10px;
-        background-color: #fff;
+        & img {
+          margin: auto;
+          height: 80px;
+          width: auto;
+          opacity: 0.7;
+        }
       }
       & .actual__user--data {
         @include mixins.column_center();
@@ -543,11 +657,24 @@ body {
         @include mixins.column_center();
         height: 45vh;
         width: 100%;
+        & input[type="submit"]{
+          @extend %font-one;
+          @extend %small-size;
+          color: #fff;
+          background-color: #000;
+          border: 1px solid #fff;
+          &:hover{
+            transition: 0.2s ease-in-out;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #fff;
+            cursor: pointer;
+          }
+        }
       }
       & .setting__role--ctnr {
         @include mixins.row_center();
         height: auto;
-        width: 100%;
+        width: 90%;
         background-color: #fff;
         overflow: hidden;
         border-radius: 10px;

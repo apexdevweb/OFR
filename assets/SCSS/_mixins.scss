@@ -1,45 +1,52 @@
-
 @mixin column_center {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 @mixin row_center_center {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 @mixin row_center {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
 }
 @mixin row_wrap {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 @mixin row_center_fs {
   display: flex;
   flex-flow: row nowrap;
-  align-items:center;
+  align-items: center;
   justify-content: flex-start;
 }
 //Anime MIxin
 @mixin make-keyframe($slide-in) {
-    @keyframes #{$slide-in} {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes #{$slide-in} {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  @include make-keyframe(slide-in);
+}
+@include make-keyframe(slide-in);
+//mixin gradient
+@mixin gradient-bg(
+  $direction: to right,
+  $start: #000000b5,
+  $end: #000000
+) {
+  background: linear-gradient($direction, $start, $end);
+}

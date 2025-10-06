@@ -40,6 +40,7 @@ require_once "backend/script/loginScript.php";
         require "include/footer.php";
         ?>
     </footer>
+    <script src="assets/JS/svgAnime.js" defer></script>
     <script src="assets/JS/animCeta.js" defer></script>
     <script src="assets/JS/animBeta.js" defer></script>
     <script src="assets/JS/revealLogin.js" defer></script>

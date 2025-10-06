@@ -12,8 +12,8 @@
 body header .header__register--link a, body .idx__container--main .idx__container--B .idx__btn .idx__btn--enter, body .navbar .log__sub--ctnr .log__title, body .navbar .log__sub--ctnr .login__form input[type=text],
 body .navbar .log__sub--ctnr .login__form input[type=password], body .navbar .log__sub--ctnr .login__form input[type=submit], body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__notif, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=text],
 body .register__ctnr .sign_up_form input[type=password],
-body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
-body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label, body footer .footer__container {
+body .register__ctnr .sign_up_form input[type=email], body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .setting__title, body .user__setting--ctnr .setting__sub--ctnr label, body .user__setting--ctnr .setting__sub--ctnr .btn_avatar, body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label, body footer .footer__container {
   font-family: "Electrolize", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -33,8 +33,8 @@ body header .header__register--link a, body .idx__container--main .idx__containe
   font-size: 1.6rem;
 }
 
-body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .timer__view, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
-body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label {
+body .navbar .user__option--ctnr .user__name--item, body .navbar .user__option--ctnr .option__sub--ctnr .user__option--item a, body .navbar .nav__item--container .nav__item a, body .main__container .main__txt--intro, body .register__ctnr .pin__view--ctnr .timer__view, body .register__ctnr .pin__view--ctnr .sign__code--pin, body .register__ctnr .pin__view--ctnr .pin__close--btn, body .register__ctnr .sign_up_form, body .register__ctnr .sign_up_form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .setting__title, body .user__setting--ctnr .setting__sub--ctnr label, body .user__setting--ctnr .setting__sub--ctnr .btn_avatar, body .user__setting--ctnr .setting__sub--ctnr .user__setting--title, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h4,
+body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .user__title--ctnr h5, body .user__setting--ctnr .setting__sub--ctnr .actual__user--data .actual__user--info .actual__user--item, body .user__setting--ctnr .setting__sub--ctnr form input[type=submit], body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr .role__sub--ctnr label {
   font-size: 1.2rem;
   letter-spacing: 1px;
 }
@@ -227,7 +227,7 @@ body .idx__container--main .idx__container--A .sub__container--A .papper1 {
   height: auto;
   width: 35vw;
   transform: rotate(90deg);
-  filter: drop-shadow(0px 0px 5px #000);
+  filter: drop-shadow(0px 0px 5px #fff);
 }
 body .idx__container--main .idx__container--A .sub__container--A .idx__logo {
   height: auto;
@@ -239,7 +239,7 @@ body .idx__container--main .idx__container--A .sub__container--A .papper2 {
   margin: 0;
   height: auto;
   width: 35vw;
-  filter: drop-shadow(0px 0px 5px #000);
+  filter: drop-shadow(0px 0px 5px #fff);
 }
 body .idx__container--main .idx__container--A .idx__title {
   opacity: 0;
@@ -293,7 +293,17 @@ body .navbar {
   background-color: #000;
   overflow: hidden;
 }
+body .navbar .papper3 {
+  margin: 0;
+  padding: 0;
+  height: 40vh;
+  width: auto;
+  transform: rotate(45deg) translate(-400px, 350px);
+  filter: drop-shadow(0px 0px 5px #fff);
+}
 body .navbar .nav__banner {
+  top: 0;
+  position: absolute;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -670,11 +680,100 @@ body .user__setting--ctnr .setting__sub--ctnr {
   justify-content: space-evenly;
   height: 45vh;
   width: 100%;
-  background-color: #000;
   border: 1px solid #fff;
   overflow: hidden;
   border-radius: 15px;
   padding: 5px;
+  background-color: #000;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__title {
+  color: #fff;
+  text-decoration: underline;
+}
+body .user__setting--ctnr .setting__sub--ctnr label {
+  color: #fff;
+  text-decoration: underline;
+}
+body .user__setting--ctnr .setting__sub--ctnr .btn_avatar {
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+}
+body .user__setting--ctnr .setting__sub--ctnr .btn_avatar:hover {
+  transition: 0.2s ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #fff;
+  cursor: pointer;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr {
+  margin: auto;
+  height: 25vh;
+  width: 18vw;
+  border-radius: 15px;
+  padding: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.792) url("../images/redcadre2.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr {
+  margin: auto;
+  height: 17vh;
+  width: 15vw;
+  padding: 10px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px 5px;
+  grid-template-areas: "A B" "C D";
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .A {
+  grid-area: A;
+  text-align: center;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .A img {
+  height: 8vh;
+  width: auto;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .A img:hover {
+  filter: drop-shadow(0px 0px 5px #fff);
+  cursor: pointer;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .B {
+  grid-area: B;
+  text-align: center;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .B img {
+  height: 10vh;
+  width: auto;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .B img:hover {
+  filter: drop-shadow(0px 0px 5px #fff);
+  cursor: pointer;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .C {
+  grid-area: C;
+  text-align: center;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .C img {
+  height: 10vh;
+  width: auto;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .C img:hover {
+  filter: drop-shadow(0px 0px 5px #fff);
+  cursor: pointer;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .D {
+  grid-area: D;
+  text-align: center;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .D img {
+  height: 10vh;
+  width: auto;
+}
+body .user__setting--ctnr .setting__sub--ctnr .user__setting--avatar-ctnr .avatar__choice--ctnr .D img:hover {
+  filter: drop-shadow(0px 0px 5px #fff);
+  cursor: pointer;
 }
 body .user__setting--ctnr .setting__sub--ctnr .user__setting--title {
   color: #fff;
@@ -686,10 +785,15 @@ body .user__setting--ctnr .setting__sub--ctnr .setting__avatar {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
-  min-height: 15vh;
-  max-width: 80%;
+  height: 15vh;
+  width: 15vw;
   border-radius: 10px;
-  background-color: #fff;
+}
+body .user__setting--ctnr .setting__sub--ctnr .setting__avatar img {
+  margin: auto;
+  height: 80px;
+  width: auto;
+  opacity: 0.7;
 }
 body .user__setting--ctnr .setting__sub--ctnr .actual__user--data {
   display: flex;
@@ -731,13 +835,24 @@ body .user__setting--ctnr .setting__sub--ctnr form {
   height: 45vh;
   width: 100%;
 }
+body .user__setting--ctnr .setting__sub--ctnr form input[type=submit] {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+}
+body .user__setting--ctnr .setting__sub--ctnr form input[type=submit]:hover {
+  transition: 0.2s ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #fff;
+  cursor: pointer;
+}
 body .user__setting--ctnr .setting__sub--ctnr .setting__role--ctnr {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
   height: auto;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   overflow: hidden;
   border-radius: 10px;
